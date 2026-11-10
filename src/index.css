@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-orbitron: 'Orbitron', monospace;
+    --font-rajdhani: 'Rajdhani', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: 'Rajdhani', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #030712;
+    color: #f1f5f9;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Orbitron', -apple-system, sans-serif;
+    letter-spacing: 0.05em;
+  }
+
+  code, pre, .font-code {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(3, 7, 18, 0.6);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(6, 182, 212, 0.25);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(6, 182, 212, 0.5);
+}
+
+/* Futuristic Glows & Holograms */
+.glow-cyan {
+  box-shadow: 0 0 25px -3px rgba(6, 182, 212, 0.35), 0 0 10px -2px rgba(6, 182, 212, 0.2);
+}
+
+.glow-blue {
+  box-shadow: 0 0 25px -3px rgba(59, 130, 246, 0.35), 0 0 10px -2px rgba(59, 130, 246, 0.2);
+}
+
+.glow-emerald {
+  box-shadow: 0 0 25px -3px rgba(16, 185, 129, 0.35), 0 0 10px -2px rgba(16, 185, 129, 0.2);
+}
+
+.text-glow-cyan {
+  text-shadow: 0 0 10px rgba(6, 182, 212, 0.6), 0 0 20px rgba(6, 182, 212, 0.3);
+}
+
+.text-glow-blue {
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.6), 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+.cyber-grid {
+  background-size: 30px 30px;
+  background-image: 
+    linear-gradient(to right, rgba(6, 182, 212, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(6, 182, 212, 0.04) 1px, transparent 1px);
+}
+
+.cyber-radial {
+  background: radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.08) 0%, rgba(15, 23, 42, 0) 70%);
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-reverse-slow {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.04);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 20s linear infinite;
+}
+
+.animate-spin-reverse-slow {
+  animation: spin-reverse-slow 28s linear infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
